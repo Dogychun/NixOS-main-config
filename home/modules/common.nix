@@ -10,6 +10,7 @@
     brightnessctl
     elephant
     libnotify
+    tree
 
     kdePackages.dolphin
     qbittorrent
