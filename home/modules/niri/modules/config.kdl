@@ -1,0 +1,66 @@
+include "modules/binds.kdl"
+include "modules/rules.kdl"
+spawn-at-startup "noctalia"
+hotkey-overlay {
+    skip-at-startup
+}
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+workspace "browser"
+workspace "code"
+workspace "chats"
+workspace "games"
+workspace "music"
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+overview {
+    workspace-shadow {
+        off
+    }
+}
+output "eDP-1" {
+    mode "1920x1080@144"
+    scale 1
+    transform "normal"
+    position x=0 y=0
+}
+output "DP-1" {
+    mode "1920x1080@60"
+    scale 1
+    transform "normal"
+    position x=-1920 y=0
+}
+input {
+    touchpad {
+        scroll-method "two-finger"
+        tap
+    }
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:alt_shift_toggle"
+        }
+    }
+    mouse {
+        accel-profile "flat"
+    }
+}
+gestures {
+    hot-corners {
+        off
+    }
+}
+layout {
+    gaps 6
+    background-color "transparent"
+    focus-ring {
+        width 2
+        active-color "#B8BB26"
+    }
+}
+cursor {
+    xcursor-theme "Bibata-Original-Classic"
+    xcursor-size 16
+}
+

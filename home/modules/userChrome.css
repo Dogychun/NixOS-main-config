@@ -1,0 +1,169 @@
+/* Gruvbox Dark Medium – userChrome.css
+   Recreated from the "Gruvbox-dark-medium" Firefox theme (theme.xpi)
+
+   Palette (from the original manifest):
+     toolbar / frame / popup / newtab bg : rgb(40, 40, 40)    #282828
+     text                                : rgb(235, 219, 178) #ebdbb2
+     urlbar field                        : rgb(146, 131, 116) #928374
+     tab line / loading accent           : rgb(184, 187, 38)  #b8bb26
+*/
+
+:root {
+  --gb-bg:      rgb(40, 40, 40);
+  --gb-fg:      rgb(235, 219, 178);
+  --gb-field:   rgb(146, 131, 116);
+  --gb-accent:  rgb(184, 187, 38);
+
+  /* Frame / titlebar */
+  --lwt-accent-color: var(--gb-bg) !important;
+  --lwt-accent-color-inactive: var(--gb-bg) !important;
+  --lwt-text-color: var(--gb-fg) !important;
+
+  /* Toolbars */
+  --toolbar-bgcolor: var(--gb-bg) !important;
+  --toolbar-color: var(--gb-fg) !important;
+  --toolbarbutton-icon-fill: var(--gb-fg) !important;
+  --toolbar-non-lwt-bgcolor: var(--gb-bg) !important;
+  --toolbar-non-lwt-textcolor: var(--gb-fg) !important;
+
+  /* URL bar / search field */
+  --toolbar-field-background-color: var(--gb-field) !important;
+  --toolbar-field-color: var(--gb-fg) !important;
+  --toolbar-field-focus-background-color: var(--gb-field) !important;
+  --toolbar-field-focus-color: var(--gb-fg) !important;
+  --toolbar-field-border-color: transparent !important;
+  --toolbar-field-focus-border-color: var(--gb-accent) !important;
+
+  /* Tabs */
+  --tab-selected-bgcolor: var(--gb-bg) !important;
+  --tab-selected-textcolor: var(--gb-fg) !important;
+  --tab-line-color: var(--gb-accent) !important;
+  --tab-loading-fill: var(--gb-accent) !important;
+  --lwt-tab-text: var(--gb-fg) !important;
+
+  /* Popups / menus / panels */
+  --arrowpanel-background: var(--gb-bg) !important;
+  --arrowpanel-color: var(--gb-fg) !important;
+  --arrowpanel-border-color: var(--gb-field) !important;
+  --panel-background: var(--gb-bg) !important;
+  --panel-color: var(--gb-fg) !important;
+  --autocomplete-popup-background: var(--gb-bg) !important;
+  --autocomplete-popup-color: var(--gb-fg) !important;
+  --urlbar-popup-url-color: var(--gb-accent) !important;
+}
+
+/* Window frame & toolbars */
+#navigator-toolbox,
+#nav-bar,
+#TabsToolbar,
+#PersonalToolbar,
+#titlebar,
+toolbar {
+  background-color: var(--gb-bg) !important;
+  color: var(--gb-fg) !important;
+}
+
+/* Remove the lighter separator lines around the toolbox */
+#navigator-toolbox {
+  border-bottom: 1px solid var(--gb-field) !important;
+}
+
+/* Tabs */
+.tabbrowser-tab .tab-label,
+.tabbrowser-tab[selected] .tab-label {
+  color: var(--gb-fg) !important;
+}
+
+.tab-background {
+  background-color: transparent !important;
+}
+
+.tab-background[selected] {
+  background-color: var(--gb-bg) !important;
+  box-shadow: none !important;
+}
+
+/* Accent line on selected tab (tab_line) */
+.tab-background[selected]::after,
+.tab-background[selected] {
+  border-top: 2px solid var(--gb-accent) !important;
+}
+
+.tabbrowser-tab:hover .tab-background:not([selected]) {
+  background-color: rgba(146, 131, 116, 0.25) !important;
+}
+
+/* Loading indicator (tab_loading) */
+.tab-throbber[busy],
+.tab-throbber[progress] {
+  color: var(--gb-accent) !important;
+  fill: var(--gb-accent) !important;
+}
+
+/* URL bar */
+#urlbar-background,
+#searchbar {
+  background-color: var(--gb-field) !important;
+  border: 1px solid transparent !important;
+}
+
+#urlbar[focused="true"] > #urlbar-background,
+#urlbar[open] > #urlbar-background {
+  background-color: var(--gb-field) !important;
+  border-color: var(--gb-accent) !important;
+}
+
+#urlbar-input,
+#urlbar .urlbar-input,
+#searchbar .searchbar-textbox {
+  color: var(--gb-fg) !important;
+}
+
+#urlbar-input::placeholder {
+  color: var(--gb-fg) !important;
+  opacity: 0.7 !important;
+}
+
+/* URL bar dropdown / results */
+#urlbar-results,
+.urlbarView,
+.urlbarView-body-outer {
+  background-color: var(--gb-bg) !important;
+  color: var(--gb-fg) !important;
+}
+
+.urlbarView-row[selected] {
+  background-color: var(--gb-field) !important;
+  color: var(--gb-fg) !important;
+}
+
+.urlbarView-url {
+  color: var(--gb-accent) !important;
+}
+
+/* Menus & popups */
+menupopup,
+panel,
+.panel-arrowcontent,
+#appMenu-popup,
+.popup-internal-panel {
+  --panel-background: var(--gb-bg) !important;
+  --panel-color: var(--gb-fg) !important;
+  background-color: var(--gb-bg) !important;
+  color: var(--gb-fg) !important;
+}
+
+menuitem[_moz-menuactive="true"],
+menu[_moz-menuactive="true"],
+.subviewbutton:hover,
+.panel-subview-body toolbarbutton:hover {
+  background-color: var(--gb-field) !important;
+  color: var(--gb-fg) !important;
+}
+
+/* Sidebar */
+#sidebar-box,
+#sidebar-header {
+  background-color: var(--gb-bg) !important;
+  color: var(--gb-fg) !important;
+}
