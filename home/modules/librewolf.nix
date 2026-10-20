@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.librewolf = {
     enable = true;
     package = pkgs.librewolf;
@@ -37,6 +41,10 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/sidebery/latest.xpi";
           installation_mode = "force_installed";
         };
+        "{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/styl_us/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
     };
 
@@ -46,14 +54,14 @@
     };
 
     profiles.dogychun = {
-      userChrome = '' 
-        #TabsToolbar { display: none !important; }
-	#sidebar-panel-header { display: none !important; }
-	#sidebar-box { padding-inline-start: 0px !important; }
+      userChrome = ''
+               #TabsToolbar { display: none !important; }
+        #sidebar-panel-header { display: none !important; }
+        #sidebar-box { padding-inline-start: 0px !important; }
 
-	* { 
-	  border-radius: 0px !important; 
-	}
+        * {
+          border-radius: 0px !important;
+        }
       '';
 
       search.force = true;
@@ -74,7 +82,7 @@
             }
           ];
           icon = "https://duckduckgo.com/favicon.ico";
-          definedAliases = [ "@ddg" ];
+          definedAliases = ["@ddg"];
         };
         google = {
           name = "Google";
@@ -90,7 +98,7 @@
             }
           ];
           icon = "https://www.google.com/favicon.ico";
-          definedAliases = [ "@g" ];
+          definedAliases = ["@g"];
         };
         nix-packages = {
           name = "Nix Pkgs";
@@ -111,7 +119,7 @@
           ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@pkgs" ];
+          definedAliases = ["@pkgs"];
         };
 
         nix-options = {
@@ -133,7 +141,7 @@
           ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@opts" ];
+          definedAliases = ["@opts"];
         };
 
         nixos-wiki = {
@@ -145,7 +153,7 @@
           ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = [ "@wiki" ];
+          definedAliases = ["@wiki"];
         };
         "DuckDuckGo No-AI".metaData.hidden = true;
         "mojeek".metaData.hidden = true;
@@ -183,5 +191,4 @@
       };
     };
   };
-
 }
