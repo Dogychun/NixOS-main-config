@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     ungoogled-chromium
     qutebrowser
@@ -11,6 +15,7 @@
     elephant
     libnotify
     tree
+    wiremix
 
     kdePackages.dolphin
     qbittorrent
