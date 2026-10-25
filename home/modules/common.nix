@@ -28,6 +28,7 @@
     bibata-cursors
 
     lutris
+    heroic
 
     grim
     slurp
