@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   xdg = {
     portal = {
       enable = true;
@@ -11,8 +11,8 @@
 
       config = {
         niri = {
-          default = [ "gnome" "gtk" ];
-          "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+          default = ["gnome" "gtk"];
+          "org.freedesktop.impl.portal.FileChooser" = ["kde"];
         };
       };
     };
@@ -27,7 +27,13 @@
         "x-scheme-handler/about" = "librewolf.desktop";
         "x-scheme-handler/unknown" = "librewolf.desktop";
 
-	"inode/directory" = "thunar.desktop";
+        "inode/directory" = "thunar.desktop";
+
+        "image/png" = "feh.desktop";
+        "image/jpeg" = "feh.dekstop";
+        "image/gif" = "feh.desktop";
+        "image/webp" = "feh.desktop";
+        "image/svg+xml" = "feh.desktop";
       };
     };
 
@@ -35,9 +41,8 @@
       enable = true;
 
       settings = {
-        default = [ "foot.desktop" ];
+        default = ["foot.desktop"];
       };
     };
   };
-
 }

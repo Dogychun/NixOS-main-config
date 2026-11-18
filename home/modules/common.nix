@@ -4,8 +4,9 @@
   ...
 }: {
   home.packages = with pkgs; [
-    ungoogled-chromium
-    qutebrowser
+    chromium
+    tutanota-desktop
+    rclone
 
     hyprpicker
     btop
@@ -16,6 +17,8 @@
     libnotify
     tree
     wiremix
+    pipes
+    bonsai
 
     kdePackages.dolphin
     qbittorrent

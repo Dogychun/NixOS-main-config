@@ -10,13 +10,15 @@
     ./nvim
 
     ./librewolf.nix
+    ./keepassxc.nix
+
+    ./vesktop.nix
 
     ./sway
     ./anyrun.nix
     ./mako.nix
 
-    ./niri.nix
-    ./noctalia.nix
+    ./gtk.nix
     ./xdg.nix
 
     ./mangohud.nix

@@ -2,8 +2,7 @@
   self,
   inputs,
   ...
-}:
-{
+}: {
   flake.nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
 
@@ -18,7 +17,11 @@
     ];
   };
 
-  flake.nixosModules.hostLaptop = { pkgs, lib, ... }: {
+  flake.nixosModules.hostLaptop = {
+    pkgs,
+    lib,
+    ...
+  }: {
     imports = [
       self.nixosModules.hostLaptopHardware
 
@@ -29,7 +32,6 @@
       self.nixosModules.v2raya
       self.nixosModules.steam
       self.nixosModules.thunar
-      self.nixosModules.kdePlasma
       self.nixosModules.sway
     ];
 
@@ -87,10 +89,15 @@
     };
 
     services.xserver = {
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = ["nvidia"];
     };
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+      problems.handlers = {
+        "gtk+".broken = "warn";
+      };
+    };
 
     environment.sessionVariables = {
       XDG_MENU_PREFIX = "plasma_";
@@ -110,8 +117,6 @@
 
       protonplus
     ];
-
-    programs.niri.enable = true;
 
     programs.nix-ld = {
       enable = true;
