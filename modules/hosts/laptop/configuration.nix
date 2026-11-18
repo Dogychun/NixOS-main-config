@@ -92,6 +92,8 @@
       videoDrivers = ["nvidia"];
     };
 
+    services.gnome.gnome-keyring.enable = true;
+
     nixpkgs.config.allowUnfree = true;
     nixpkgs.config = {
       problems.handlers = {
